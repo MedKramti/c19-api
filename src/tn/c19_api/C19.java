@@ -33,7 +33,7 @@ public class C19 {
        }
        countryExist=true;
        StringBuilder responseContent;
-       responseContent = connect("http://127.0.0.1:8080/COVID-19/api?country=" + country);
+       responseContent = connect("http://c19-api.tn/api?country=" + country);
        
        if (responseContent==null){
            System.out.println("no reponse from the server");
@@ -53,8 +53,8 @@ public class C19 {
            connection = (HttpURLConnection) url.openConnection();
 
            connection.setRequestMethod("GET");
-           connection.setReadTimeout(5000);
-           connection.setConnectTimeout(5000);
+           connection.setReadTimeout(15000);
+           connection.setConnectTimeout(15000);
 
            int status = connection.getResponseCode();
            if (status == 200) {
@@ -97,7 +97,7 @@ public class C19 {
    private static void addCountries(){
        if (C19.countries.isEmpty()){
            StringBuilder responseContent;
-           responseContent = connect("http://127.0.0.1:8080/COVID-19/api");
+           responseContent = connect("http://c19-api.tn/api");
            
            JSONArray result = new JSONArray(responseContent.toString());
            for (int i = 0; i < result.length(); i++) {
