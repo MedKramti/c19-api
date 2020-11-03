@@ -62,7 +62,7 @@ Kenya KE
 
 ## Example : in(String date)
 
-Returns all countries and their ISO2 code.
+Returns stats of a specific country in a given date.
 ```java
 C19 Tunisia = new C19("Tunisia");
 System.out.println(Tunisia.in("2020-09-26"));
@@ -73,7 +73,7 @@ System.out.println(Tunisia.in("2020-09-26"));
 Stats{totalConfirmed=14392, dailyDeaths=11, totalRecovered=5032, totalActive=9169, date=2020-09-26}
 ```
 ## Example 2 : in(String date)
-
+Formatting the output using Stats class
 <br/>
 
 ```java
